@@ -1,0 +1,32 @@
+{
+  "name": "unit4.jukebox.starter-2nd-jukebox-shane-healy-",
+  "version": "1.0.0",
+  "description": "Introducing Jukebox, the successor to Jukebox Mini! We've secured some initial tracks for our digital music platform, so now users can add tracks to their playlists.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheCodeofMonteCristo/Unit4.Jukebox.Starter-2nd-Jukebox-Shane-Healy-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheCodeofMonteCristo/Unit4.Jukebox.Starter-2nd-Jukebox-Shane-Healy-/issues"
+  },
+  "homepage": "https://github.com/TheCodeofMonteCristo/Unit4.Jukebox.Starter-2nd-Jukebox-Shane-Healy-#readme",
+  "dependencies": {
+    "@prisma/client": "^5.21.1",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "prisma": "^5.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

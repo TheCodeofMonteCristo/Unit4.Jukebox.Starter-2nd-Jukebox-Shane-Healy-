@@ -1,0 +1,35 @@
+// Prisma schema definition
+
+// Database provider
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Define the database connection
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model
+model User {
+  id        Int      @id @default(autoincrement()) // Primary key
+  username  String   @unique                       // Unique username
+  playlists  Playlist[]  @relation("UserPlaylists") // One-to-many relation to Playlist
+}
+
+// Playlist model
+model Playlist {
+  id          Int      @id @default(autoincrement()) // Primary key
+  name        String                                   // Playlist name
+  description String                                   // Playlist description
+  owner       User      @relation("UserPlaylists")    // Relation to User
+  tracks      Track[]  @relation("PlaylistTracks")    // Many-to-many relation to Track
+}
+
+// Track model
+model Track {
+  id        Int       @id @default(autoincrement()) // Primary key
+  name      String                                  // Track name
+  playlists Playlist[] @relation("PlaylistTracks")   // Many-to-many relation to Playlist
+}

@@ -1,22 +1,25 @@
+
+#### 4. **`docs/schema.dbml`**
+```plaintext
 Table User {
-  id        Int     [pk, increment]
-  username  String
-  playlists Playlist[]
+  id        Int     [pk, increment]        // Primary key, auto-incrementing
+  username  String                            // Username of the user
+  playlists Playlist[]                        // Relation to playlists owned by the user
 }
 
 Table Playlist {
-  id            Int     [pk, increment]
-  name          String
-  description   String
-  owner         User
-  tracks        Track[]
+  id            Int     [pk, increment]    // Primary key, auto-incrementing
+  name          String                        // Name of the playlist
+  description   String                        // Description of the playlist
+  owner         User                          // Relation to the user who owns the playlist
+  tracks        Track[]                       // Relation to tracks in the playlist
 }
 
 Table Track {
-  id        Int [pk, increment]
-  name      String
-  playlists Playlist[]
+  id        Int [pk, increment]              // Primary key, auto-incrementing
+  name      String                          // Name of the track
+  playlists Playlist[]                      // Relation to playlists that contain the track
 }
 
-Ref: User.playlists < Playlist.owner
-Ref: Playlist.tracks <> Track.playlists
+Ref: User.playlists < Playlist.owner        // One-to-many relation: User to Playlists
+Ref: Playlist.tracks <> Track.playlists     // Many-to-many relation: Playlist to Tracks
